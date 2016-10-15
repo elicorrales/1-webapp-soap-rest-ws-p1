@@ -7,6 +7,7 @@ import javax.jws.WebService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 
 import com.eli.calc.shape.domain.CalculationRequest;
 import com.eli.calc.shape.domain.CalculationResult;
@@ -133,11 +134,15 @@ public class ShapeCalculatorWebServiceImpl implements ShapeCalculatorWebService 
 			List<CalculationRequest> list = calculator.getAllPendingRequests();
 			response = new PendingRequestsResponse(list);
 
+		} catch (InvalidDataAccessApiUsageException e) {
+			logger.error("Error getPendingRequests: Unexpected Persistent Data. Check Database.",e);
+			response = new PendingRequestsResponse(e);
+	
 		} catch (Exception e) {
 			logger.error("Error attempting to getPendingRequests",e);
 			response = new PendingRequestsResponse(e);
 		}
-		
+	
 		return response;
 	}
 

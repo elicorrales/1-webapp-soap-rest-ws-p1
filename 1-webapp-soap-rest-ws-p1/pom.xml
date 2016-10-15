@@ -17,18 +17,11 @@
 
 
 		<dependency>
-			<groupId>shape-calc-jpa-hibernate-rel2</groupId>
+			<groupId>shape-calc-jpa-hibernate-rel3</groupId>
 			<artifactId>shape-calc-jpa-hibernate-rel2</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-<!--
-		<dependency>
-			<groupId>shape-calc-jpa-hibernate</groupId>
-			<artifactId>shape-calc-jpa-hibernate</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
--->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-http</artifactId>
