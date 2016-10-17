@@ -20,8 +20,12 @@ import com.eli.calc.shape.service.ws.resp.StatusResponse;
 @WebService
 public interface ShapeCalculatorWebService {
 
+	@GET
+	@Path("/shapeNames")
 	ShapeNamesResponse getShapeNames();
 	
+	@GET
+	@Path("/calcTypes")
 	CalcTypesResponse getCalcTypes();
 	
 	@DELETE
