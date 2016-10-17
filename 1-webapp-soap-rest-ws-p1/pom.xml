@@ -18,7 +18,7 @@
 
 		<dependency>
 			<groupId>shape-calc-jpa-hibernate-rel3</groupId>
-			<artifactId>shape-calc-jpa-hibernate-rel2</artifactId>
+			<artifactId>shape-calc-jpa-hibernate-rel3</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
@@ -69,95 +69,7 @@
 
 	<build>
 
-<!--
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.apache.cxf</groupId>
-										<artifactId>cxf-java2ws-plugin</artifactId>
-										<versionRange>[${cxf.version},)</versionRange>
-										<goals>
-											<goal>java2ws</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
--->
-
-
 		<plugins>
-
-<!--
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>src/main/webapp/WEB-INF/</directory>
-							<includes>
-								<include>wsdl/*</include>
-								<include>wsdl</include>
-							</includes>
-							<followSymlinks>false</followSymlinks>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
--->
-
-								<!--  
-				-createxsdimports -s ${basedir}/src/main/webapp/wsdl
-				-createxsdimports -s ${project.build.directory}/generated -classdir ${project.build.outputDirectory}
-				-createxsdimports -classdir ${project.build.outputDirectory}
-								-->
-
-<!--
-			<plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-java2ws-plugin</artifactId>
-				<version>${cxf.version}</version>
-				<executions>
-					<execution>
-						<id>process-classes</id>
-						<phase>process-classes</phase>
-						<configuration>
-							<className>com.eli.calc.shape.service.ws.ShapeCalculatorWebService</className>
-							<serviceName>shapecalc</serviceName>
-							<address>http://localhost:8080/${basedir}/services/ws/shapecalc</address>
-							<genWsdl>true</genWsdl>
-							<genWrapperbean>false</genWrapperbean>
-							<verbose>true</verbose>
-							<outputFile>${basedir}/src/main/webapp/WEB-INF/wsdl/ShapeCalcWebService.wsdl</outputFile>
-							<argline>
-				-createxsdimports -s ${basedir}/src/main/webapp/WEB-INF/wsdl 
-							</argline>
-							<soap12>true</soap12>
-						</configuration>
-						<goals>
-							<goal>java2ws</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
--->
-
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
